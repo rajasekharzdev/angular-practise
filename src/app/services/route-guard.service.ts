@@ -13,9 +13,8 @@ export class RouteGuardService implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
-    this.router.navigate(['']);
+    // this.router.navigate(['']);
     //JWT Token --> Local storage
-    window.prompt('Invalid user');
-    return false;
+    return true;
   }
 }

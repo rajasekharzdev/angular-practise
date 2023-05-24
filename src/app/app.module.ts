@@ -10,6 +10,16 @@ import { DirectivePractiseComponent } from './directive-practise/directive-pract
 import { RouteGuardService } from './services/route-guard.service';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AngularMaterialComponent } from './angular-material/angular-material.component';
+import { MaterialModule } from './material/material.module';
+import { PipesComponent } from './pipes/pipes.component';
+import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.component';
+import { FormsModule } from '@angular/forms';
+import { RxjsComponent } from './rxjs/rxjs.component';
+import { OperatorsComponent } from './rxjs/operators/operators.component';
+import { HomeComponent } from './home/home.component';
+import { CommonModule } from '@angular/common';
+import { SubjectsComponent } from './rxjs/subjects/subjects.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +28,22 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     ContentchildComponent,
     DirectivePractiseDirective,
     DirectivePractiseComponent,
+    AngularMaterialComponent,
+    PipesComponent,
+    LifeCycleHooksComponent,
+    RxjsComponent,
+    OperatorsComponent,
+    SubjectsComponent,
+    HomeComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MaterialModule,
+    FormsModule,
+  ],
   providers: [RouteGuardService],
   bootstrap: [AppComponent],
 })

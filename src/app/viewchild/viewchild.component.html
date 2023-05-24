@@ -2,9 +2,7 @@
 
 <app-contentchild></app-contentchild> -->
 
-<div>
-  {{ employee }}
-  {{ employeePhoneNum }}
-</div>
-
-<button (click)="sendToParent()">Click</button>
+<app-life-cycle-hooks [employee]="'charan123'" [employeePhoneNum]="1234">
+  <span> Hiiii </span>
+  <span question> H ru </span></app-life-cycle-hooks
+>

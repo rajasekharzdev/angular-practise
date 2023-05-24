@@ -31,19 +31,14 @@ export class ViewchildComponent implements OnInit {
 
   @ViewChild('accessingFromDOM') accessingFromDOM!: ElementRef;
 
-  constructor() {
-    console.log('Constructor');
-  }
+  constructor() {}
 
   ngOnChanges() {
     //this.employee
-    console.log('ngOnChanges');
     this.employee = 'Kiran';
   }
 
-  ngOnInit(): void {
-    console.log('ngOnInit');
-  }
+  ngOnInit(): void {}
 
   sendToParent() {
     this.employeeInformation.emit('hello');
