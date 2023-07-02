@@ -20,6 +20,8 @@ import { OperatorsComponent } from './rxjs/operators/operators.component';
 import { HomeComponent } from './home/home.component';
 import { CommonModule } from '@angular/common';
 import { SubjectsComponent } from './rxjs/subjects/subjects.component';
+import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +37,8 @@ import { SubjectsComponent } from './rxjs/subjects/subjects.component';
     OperatorsComponent,
     SubjectsComponent,
     HomeComponent,
+    TemplateDrivenFormsComponent,
+    ReactiveFormsComponent,
   ],
   imports: [
     BrowserModule,

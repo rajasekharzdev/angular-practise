@@ -1,0 +1,58 @@
+<form
+  #userInformation="ngForm"
+  (ngSubmit)="userInformationDetails(userInformation)"
+>
+  <div class="row p-2">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="First Name"
+        name="firstName"
+        ngModel
+        pattern="^[a-zA-Z]+$"
+        required
+        maxlength="15"
+      />
+      <label for="firstName">First Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Last Name"
+        name="lastName"
+        ngModel
+      />
+      <label for="lastName">Last Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+        name="email"
+        ngModel
+      />
+      <label for="floatingInput">Email address</label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-primary" [disabled]="!userInformation.valid">
+        Submit
+      </button>
+    </div>
+  </div>
+</form>
+
+<div class="row p-2" *ngIf="(userInformationObject | json) != '{}'">
+  <div class="col-12">First Name: {{ userInformationObject.firstName }}</div>
+  <div class="col-12">Last Name: {{ userInformationObject.lastName }}</div>
+  <div class="col-12">Email: {{ userInformationObject.email }}</div>
+</div>
