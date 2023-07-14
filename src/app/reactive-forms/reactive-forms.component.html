@@ -1,1 +1,64 @@
-<p>reactive-forms works!</p>
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  <div class="row p-2">
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="First Name"
+        name="firstName"
+        formControlName="firstName"
+        required
+      />
+      <label for="firstName">First Name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input
+        type="text"
+        class="form-control"
+        id="lastName"
+        placeholder="Last Name"
+        name="lastName"
+        formControlName="lastName"
+      />
+      <label for="lastName">Last Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input
+        type="email"
+        class="form-control"
+        id="floatingInput"
+        placeholder="name@example.com"
+        name="email"
+        formControlName="email"
+      />
+      <label for="floatingInput">Email address</label>
+    </div>
+  </div>
+
+  <button style="margin-left: 10px" (click)="addName()">Add Alias Name</button>
+  <div formArrayName="aliasNames">
+    <div *ngFor="let alias of aliasNames.controls; let i = index">
+      <div [formGroupName]="i">
+        {{ i }}
+        <input type="text" formControlName="alias" />
+
+        <button (click)="removeName(i)">Remove</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-primary">Submit</button>
+    </div>
+  </div>
+</form>
+
+<!-- <div class="row p-2" *ngIf="(userInformationObject | json) != '{}'">
+  <div class="col-12">First Name: {{ userInformationObject.firstName }}</div>
+  <div class="col-12">Last Name: {{ userInformationObject.lastName }}</div>
+  <div class="col-12">Email: {{ userInformationObject.email }}</div>
+</div> -->

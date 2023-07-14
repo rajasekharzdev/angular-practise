@@ -1,0 +1,15 @@
+<div style="margin-left: 10px">
+  <label>Text Value:</label>
+  <input
+    style="margin-left: 5px"
+    type="text"
+    [ngModel]="textValue"
+    (ngModelChange)="updateValue()"
+  />
+</div>
+
+<div style="margin-left: 10px; margin-top: 10px">
+  <button class="btn btn-primary" (click)="valueUpdated()">
+    Updated Value
+  </button>
+</div>

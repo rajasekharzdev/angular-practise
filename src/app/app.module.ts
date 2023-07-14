@@ -14,7 +14,7 @@ import { AngularMaterialComponent } from './angular-material/angular-material.co
 import { MaterialModule } from './material/material.module';
 import { PipesComponent } from './pipes/pipes.component';
 import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { OperatorsComponent } from './rxjs/operators/operators.component';
 import { HomeComponent } from './home/home.component';
@@ -22,6 +22,7 @@ import { CommonModule } from '@angular/common';
 import { SubjectsComponent } from './rxjs/subjects/subjects.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { OneAndTwoWayBindingComponent } from './one-and-two-way-binding/one-and-two-way-binding.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     HomeComponent,
     TemplateDrivenFormsComponent,
     ReactiveFormsComponent,
+    OneAndTwoWayBindingComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +49,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [RouteGuardService],
   bootstrap: [AppComponent],

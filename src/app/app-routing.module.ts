@@ -10,6 +10,7 @@ import { OperatorsComponent } from './rxjs/operators/operators.component';
 import { SubjectsComponent } from './rxjs/subjects/subjects.component';
 import { TemplateDrivenFormsComponent } from './template-driven-forms/template-driven-forms.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { OneAndTwoWayBindingComponent } from './one-and-two-way-binding/one-and-two-way-binding.component';
 
 const routes: Routes = [
   {
@@ -45,6 +46,7 @@ const routes: Routes = [
   { path: 'pipes', component: PipesComponent },
   { path: 'templateDrivenForms', component: TemplateDrivenFormsComponent },
   { path: 'reactiveForms', component: ReactiveFormsComponent },
+  { path: 'binding', component: OneAndTwoWayBindingComponent },
   { path: '', component: ViewchildComponent },
 ];
 

@@ -9,6 +9,7 @@ import {
 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, Subscription } from 'rxjs';
+import { ChildModuleService } from './child/Services/childModuleService';
 
 @Component({
   selector: 'app-root',
@@ -24,7 +25,10 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
   apiCalls!: Subscription;
   apiCall2!: Subscription;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(
+    private httpClient: HttpClient,
+    private childModuleService: ChildModuleService
+  ) {}
 
   ngOnChanges() {}
   ngOnInit() {
@@ -34,6 +38,7 @@ export class AppComponent implements OnInit, AfterViewInit, OnChanges {
     //     console.log('data....', data);
     //     this.data = data.data;
     //   });
+    this.childModuleService.getChildInformation();
   }
 
   ngAfterViewInit() {
