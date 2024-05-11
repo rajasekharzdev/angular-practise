@@ -1,7 +1,15 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { Observable, from, interval, of } from 'rxjs';
-import { concatMap, filter, map, switchMap, take } from 'rxjs/operators';
+import { Observable, from, fromEvent, interval, of } from 'rxjs';
+import {
+  concatMap,
+  debounce,
+  filter,
+  map,
+  scan,
+  switchMap,
+  take,
+} from 'rxjs/operators';
 
 @Component({
   selector: 'app-rxjs',
@@ -163,5 +171,10 @@ export class RxjsComponent implements OnInit {
       switchMap((x) => of(x, x * 2, x * 3))
     );
     switched.subscribe((x) => console.log('switch map function', x));
+  }
+
+  debounceTime(event: any) {
+    fromEvent(event, 'click').pipe(scan((i) => ++i, 1)),
+      debounce((i: any) => interval(200 * i));
   }
 }
